@@ -1,2 +1,2 @@
 # SoftUni
-Contains homework and exam tasks from the curriculum of Software University.
+Contains homework and exam tasks from the curriculum of the Software University.
