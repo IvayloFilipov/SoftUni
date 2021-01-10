@@ -1,0 +1,22 @@
+<!-- Header -->
+<nav>
+    <div class="left-container">
+        <ul>
+            {{#if isLoggedIn}}
+            <li><a href="/home">Home</a></li>
+            <li><a href="/loadAllDestinationsFromDB">Destinations</a></li>
+            <li><a href="/loadAddDestForm">Add +</a></li>
+            {{else}}
+            <li><a href="/home">Home</a></li>
+            <li><a href="/loadLoginForm">Login</a></li>
+            <li><a href="/loadRegisterForm">Register</a></li>
+            {{/if}}
+        </ul>
+    </div>
+    <div class="right-container">
+        {{#if isLoggedIn}}
+        <span>Welcome, {{emailOfTheLoggedUser}} |</span>
+        <a href="/logoutUser" class="log-out">Logout</a>
+        {{/if}}
+    </div>
+</nav>

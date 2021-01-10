@@ -1,0 +1,17 @@
+<!-- header -->
+<nav class="navbar navbar-light bg-light static-top">
+    <div class="container">
+        {{#if isLoggedIn}}
+        <a class="navbar-brand" href="/home">SoftBay</a>
+        <a class="navbar-item" href="/loadDashboard">Dashboard</a>
+        <a class="navbar-item" href="/loadCreateOfferForm">Create Offer</a>
+        <!--BONUS (NOT REQUIRED)--><a class="navbar-item" href="/loadProfilePage">Profile</a>
+        <!--BONUS (NOT REQUIRED)-->
+        <a class="navbar-item" href="/logoutUser">Logout</a>
+        {{else}}
+        <a class="navbar-brand" href="/home">SoftBay</a>
+        <a class="btn btn-warning" href="/loadRegisterForm">Login</a>
+        {{/if}}
+    </div>
+</nav>
+<!-- ./header -->

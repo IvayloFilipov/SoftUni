@@ -1,0 +1,44 @@
+{{> header}}
+<!-- Details Dashboard  -->
+<section id="viewMyDestinations">
+    <h3>Your destinations</h3>
+    {{#each allDestinations}}   
+    <div class="destination-ticket">
+        <div class="destination-left">
+            <img src="{{imgUrl}}"
+                alt="{{destination}}">
+        </div>
+        <div class="destination-right">
+            <div>
+                <h3>{{destination}}</h3><span>{{departureDate}}</span>
+            </div>
+            <div>
+                {{city}}
+            </div>
+            <p>{{duration}} days </p>
+            <a href="/del/{{id}}" class="remove">REMOVE</a>
+            <a href="/loadCurrDestDetails/{{id}}" class="details">Details</a>
+        </div>
+
+    </div>
+    {{else}}
+    <h5>You don't have destinations!</h5>
+    {{/each}}
+    {{!-- <div class="destination-ticket">
+        <div class="destination-left">
+            <img src="https://image.freepik.com/free-photo/buildings-tall-tower_181624-20757.jpg" alt="">
+        </div>
+        <div class="destination-right">
+            <div>
+                <h3>Canada</h3><span>2021-09-02</span>
+            </div>
+            <div>
+                to Toronto
+            </div>
+            <p>13 days </p>
+            <a href="del/{{id}}" class="remove">REMOVE</a>
+            <a href="" class="details">Details</a>
+        </div>
+    </div> --}}
+</section>
+{{> footer}}
