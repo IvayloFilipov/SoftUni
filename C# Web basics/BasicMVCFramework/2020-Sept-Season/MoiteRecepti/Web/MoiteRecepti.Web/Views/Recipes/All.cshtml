@@ -1,0 +1,26 @@
+﻿@model MoiteRecepti.Web.ViewModels.Recipes.RecipesListViewModel
+@{
+    this.ViewData["Title"] = "All Recipes, page " + Model.PageNumber;
+}
+
+@if (this.TempData.ContainsKey("Message"))
+{
+    <div class="alert alert-success">@this.TempData["Message"]</div>
+}
+
+<h1>@this.ViewData["Title"]</h1>
+<hr />
+<div class="row">
+    @foreach (var recipe in this.Model.Recipes)
+    {
+        <div class="media col-md-4">
+            <img src="@recipe.ImageUrl" width="100" class="mr-3 img-responsive">
+            <div class="media-body">
+                <h5 class="mt-0"><a asp-action="ById" asp-route-id="@recipe.Id">@recipe.Name</a></h5>
+                @recipe.CategoryName
+            </div>
+        </div>
+    }
+</div>
+<hr />
+<partial name="_PagingPartial" model="@Model" />
